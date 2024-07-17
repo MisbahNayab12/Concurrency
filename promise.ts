@@ -40,6 +40,7 @@ function cooking(){
 }
 
 async function partyMenu(){
+    try {
     const step1 = await sweetDish();
     console.log(step1);
     const step2 = await mainDish();
@@ -48,6 +49,11 @@ async function partyMenu(){
     console.log(step3);
     const step4 = await cooking()
     console.log(step4)
+    } catch (error){
+        console.log(error)
+    } finally {
+        console.log("Yummyyyy!!")
+    }
 }
 
 partyMenu();
