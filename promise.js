@@ -34,14 +34,22 @@ function cooking() {
     });
 }
 async function partyMenu() {
-    const step1 = await sweetDish();
-    console.log(step1);
-    const step2 = await mainDish();
-    console.log(step2);
-    const step3 = await sideDish();
-    console.log(step3);
-    const step4 = await cooking();
-    console.log(step4);
+    try {
+        const step1 = await sweetDish();
+        console.log(step1);
+        const step2 = await mainDish();
+        console.log(step2);
+        const step3 = await sideDish();
+        console.log(step3);
+        const step4 = await cooking();
+        console.log(step4);
+    }
+    catch (error) {
+        console.log(error);
+    }
+    finally {
+        console.log("Yummyyyy!!");
+    }
 }
 partyMenu();
 function finalMessage() {
